@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Intermediate Answer Keys</title>
-</head>
 <body>
-    <h1>Intermediate Answer Keys</h1>
-    <p>Website is working 🎉</p>
+
+<h1>Intermediate Answer Keys</h1>
+
+<div id="loginBox">
+  <h2>Student Login</h2>
+
+  <input type="email" id="email" placeholder="Enter Email"><br><br>
+
+  <input type="password" id="password" placeholder="Enter Password"><br><br>
+
+  <button onclick="login()">Login</button>
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = function(){
+  const email=document.getElementById("email").value;
+  const password=document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth,email,password)
+  .then(()=>alert("Signup successful"))
+  .catch(err=>alert(err.message));
+}
+
+window.login = function(){
+  const email=document.getElementById("email").value;
+  const password=document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth,email,password)
+  .then(()=>alert("Login successful"))
+  .catch(err=>alert(err.message));
+}
+</script>
+
 </body>
-</html>

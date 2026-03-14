@@ -3,101 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intermediate Answer Keys</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: linear-gradient(to right, #6a11cb, #2575fc); 
-      color: #fff; 
-      text-align: center; 
-      padding: 20px; 
-    }
-    #loginBox, #uploadBox {
-      background: rgba(0,0,0,0.3); 
-      padding: 20px; 
-      border-radius: 10px; 
-      display: inline-block; 
-      margin-top: 20px;
-      width: 90%;
-      max-width: 400px;
-    }
-    input { 
-      padding: 10px; 
-      margin: 5px; 
-      width: 90%; 
-      border-radius: 5px; 
-      border: none; 
-    }
-    button { 
-      padding: 10px 20px; 
-      margin: 5px; 
-      border-radius: 5px; 
-      border: none; 
-      cursor: pointer; 
-      background: #ff7e5f; 
-      color: #fff; 
-    }
-    button:hover { 
-      background: #feb47b; 
-    }
-  </style>
+  <title>Test Page</title>
 </head>
 <body>
-
-<h1>Intermediate Answer Keys</h1>
-
-<!-- Student Login -->
-<div id="loginBox">
-  <h2>Student Login</h2>
-  <input type="email" id="email" placeholder="Enter Email"><br>
-  <input type="password" id="password" placeholder="Enter Password"><br>
-  <button onclick="login()">Login</button>
-  <button onclick="signup()">Sign Up</button>
-</div>
-
-<!-- Admin Upload (will connect to Firebase Storage later) -->
-<div id="uploadBox">
-  <h2>Admin Upload (Coming Soon)</h2>
-  <p>You will be able to upload PDFs and images here.</p>
-</div>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-// 🔑 REPLACE THIS WITH YOUR REAL FIREBASE CONFIG
-const firebaseConfig = {
-  apiKey: "AIzaSyXXXXXX...",
-  authDomain: "yourproject.firebaseapp.com",
-  projectId: "yourproject",
-  storageBucket: "yourproject.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456:web:abc123"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Signup function
-window.signup = function() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => alert("Signup successful"))
-    .catch(err => alert(err.message));
-}
-
-// Login function
-window.login = function() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => alert("Login successful"))
-    .catch(err => alert(err.message));
-}
-</script>
-
+  <h1>Website is working!</h1>
+  <p>If you see this, GitHub Pages is fine.</p>
 </body>
-</html>
+</html>      
